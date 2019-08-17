@@ -47,12 +47,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { AtendimentoComponent } from './atendimento/atendimento.component';
+import { LoginComponent } from './acesso/login/login.component';
+import { Usuario } from './usuarios/usuario';
+import { LoggedInGuardService } from './services/logged-in-guard.service';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AtendimentoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +110,7 @@ import {MatTreeModule} from '@angular/material/tree';
     PortalModule,
     ScrollingModule
   ],
-  providers: [],
+  providers: [Usuario, LoggedInGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
